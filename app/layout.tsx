@@ -3,11 +3,12 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import ThemeToggle from "@/components/ThemeToggler";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adrian's Portfolio",
+  title: "Joseph's Portfolio",
   description: "Modern & Minimal JS Mastery Portfolio",
 };
 
@@ -24,11 +25,12 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
           {children}
+          <ThemeToggle />
         </ThemeProvider>
       </body>
     </html>
